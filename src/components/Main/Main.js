@@ -1,0 +1,30 @@
+///////////////////////////////////////////////////////////////////////////////////////////////////
+import React from 'react';
+import Header from '../Header/Header';
+import Slider from './sections/Slider/Slider';
+import Banner from './sections/Banner/Banner';
+import Quote from './sections/Quote/Quote';
+import Menu from './Menu/Menu';
+import Footer from '../Footer/Footer';
+import styles from './styles.css';
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+function Main() {
+    return <div>
+        <Header/>
+        <div className="content">
+            <Slider />
+            <Banner />
+            <Quote />
+            <div className={styles.sectionMenu}>
+                <Menu/>
+            </div>
+        </div>
+        <Footer/>
+    </div>
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+export default Main;
+
+///////////////////////////////////////////////////////////////////////////////////////////////////

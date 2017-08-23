@@ -1,0 +1,27 @@
+/*/////////////////////////////////////////////////////////////////////////////*/
+
+/*/////////////////////////////////////////////////////////////////////////////*/
+.main-header {
+    background: rgba(0,0,0, 0.3);
+}
+.header-wrapper {
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.logo-wrapper {
+    flex: 0 0 100px;
+    padding: 10px 0;
+}
+.logo-block {
+    display: block;
+    &-image {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+    }
+}
