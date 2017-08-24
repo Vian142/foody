@@ -1,0 +1,10 @@
+:root {
+    /* fonts */
+    --font-normal: Arial, sans-serif;
+    --font-light: 'Arial', sans-serif;
+    /* colors */
+    --dark: #333;
+    --white: #fff;
+    --grey: #9E9E9E;
+    --dark-grey: #29292a;
+  }
