@@ -10,9 +10,9 @@ import styles from './styles.css';
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 function Main() {
-    return <div>
+    return <div className={styles.mainWrapper}>
         <Header/>
-        <div className="content">
+        <div className={styles.content}>
             <Slider />
             <Banner />
             <Quote />

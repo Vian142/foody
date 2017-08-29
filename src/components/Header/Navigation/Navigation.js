@@ -11,7 +11,7 @@ const menu = [
 ]
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-function MenuItem({url, text}) {
+function NavigationItem({url, text}) {
     return <li className={styles.navItem}>
         <a href={url} className={styles.navItemLink}>
             {text}
@@ -20,17 +20,17 @@ function MenuItem({url, text}) {
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-function Menu() {
+function Navigation() {
     return <div className={styles.nav}>
         <ul className={styles.navList}>
             {
-                _.map(menu, (item, index) => <MenuItem key={index} {...item} />)
+                _.map(menu, (item, index) => <NavigationItem key={index} {...item} />)
             }
         </ul>
     </div>
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-export default Menu;
+export default Navigation;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////

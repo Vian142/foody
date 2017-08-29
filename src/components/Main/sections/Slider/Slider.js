@@ -12,7 +12,7 @@ function Slider() {
                 <div className={styles.description}>
                     You`ll never put a better <br />
                     Bit of food on your knife.
-            </div>
+                </div>
                 <div className={styles.btnWrapper}>
                     <span className={styles.btn}>
                         Our menu

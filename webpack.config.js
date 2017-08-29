@@ -12,7 +12,7 @@ module.exports = {
   devtool: 'source-map',
   entry: {
     bundle: _.compact([
-      isHot && 'webpack-hot-middleware/client',
+      'webpack-hot-middleware/client',
       path.join(__dirname, '/src/client')
     ])
   },
@@ -23,10 +23,14 @@ module.exports = {
   },
   resolve: {
     modules: [
-      path.join(__dirname, "src"),
-      "node_modules"
+      path.join(__dirname, 'src'),
+      'node_modules'
     ]
   },
+
+  plugins: [
+    new webpack.HotModuleReplacementPlugin()
+  ],
   module: {
     rules: [{
       enforce: 'pre',
@@ -36,14 +40,7 @@ module.exports = {
     },
     {
       test: /\.js$/,
-      loader: 'babel-loader',
-      query: {
-        presets: [
-          'es2015',
-          'react',
-          'stage-0'
-        ]
-      },
+      loaders: ['react-hot-loader', 'babel-loader'],
       include: [
         path.resolve(__dirname, './src/')
       ]
@@ -64,7 +61,7 @@ module.exports = {
     },
     { 
       test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-      loader: "file-loader",
+      loader: 'file-loader',
       options: {
         name: '[name]-[hash].[ext]',
         outputPath: 'fonts/'
@@ -72,7 +69,7 @@ module.exports = {
     },
     { 
       test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-      loader: "file-loader",
+      loader: 'file-loader',
       options: {
         name: '[name]-[hash].[ext]',
         outputPath: 'fonts/'
@@ -89,8 +86,5 @@ module.exports = {
       loader: 'file-loader?name=images/[name]-[hash].[ext]'
     }
     ]
-  },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin()
-  ]
+  }
 };

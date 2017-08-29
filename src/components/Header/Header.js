@@ -1,7 +1,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 import React from 'react';
 import logo from './logo.png';
-import Menu from './Menu/Menu';
+import Navigation from './Navigation/Navigation';
 import SocialBlock from '../common/SocialBlock/SocialBlock';
 import styles from './styles.css';
 
@@ -15,7 +15,7 @@ function Header(){
                 </span>
             </div>
             <div className={styles.navigationWrapper}>
-                <Menu/>
+                <Navigation/>
             </div>
             <div className={styles.socialWrapper}>
                 <SocialBlock/>

@@ -1,10 +1,11 @@
 :root {
     /* fonts */
-    --font-normal: Arial, sans-serif;
-    --font-light: 'Arial', sans-serif;
+    --font-open-sans: 'Open Sans', sans-serif;
+    --font-lobster: 'Lobster', sans-serif;
     /* colors */
     --dark: #333;
-    --white: #fff;
-    --grey: #9E9E9E;
-    --dark-grey: #29292a;
+    --white: #ffffff;
+    --grey: rgb(160, 177, 166);
+    --dark-grey: rgb(41, 41, 42);
+    --dark-blue: #27364a;
   }

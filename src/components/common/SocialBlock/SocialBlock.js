@@ -4,16 +4,16 @@ import _ from 'lodash';
 import styles from './styles.css';
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 const social = [
-    { url: '/', icon: 'fa-envelope'},
-    { url: '/', icon: 'fa-facebook'},
-    { url: '/', icon: 'fa-vk'}
+    { url: '/', icon: 'fa-facebook-official'},
+    { url: '/', icon: 'fa-instagram'},
+    { url: '/', icon: 'fa-twitter'}
 ]
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 function SocialItem({url, icon}) {
     return <li className={styles.socialItem}>
         <a href={url} className={styles.socialLink}>
-            <span className='fa fa-vk'/>
+            <span className={`fa ${icon}`}/>
         </a>
     </li>
 }
