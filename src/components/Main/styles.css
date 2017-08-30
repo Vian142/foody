@@ -3,11 +3,21 @@
 
 /*/////////////////////////////////////////////////////////////////////////////*/
 .main-wrapper {
-    display: block;
-    position: relative;
-    width: 100%;
+  display: block;
+  position: relative;
+  width: 100%;
 }
 .content {
-    display: block;
-    position: relative;
+  display: block;
+  position: relative;
+}
+.section-menu {
+  padding: 20px 0;
+  &-title {
+    font-family: var(--font-lobster);
+    font-size: 35px;
+    color: #28374b;
+    text-align: center;
+    padding: 5px 10px;
+  }
 }

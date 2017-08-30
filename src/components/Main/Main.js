@@ -17,6 +17,7 @@ function Main() {
             <Banner />
             <Quote />
             <div className={styles.sectionMenu}>
+                <div className={styles.sectionMenuTitle}>We Present You Our Menu</div>
                 <Menu/>
             </div>
         </div>

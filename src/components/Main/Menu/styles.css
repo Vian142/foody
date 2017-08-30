@@ -1,0 +1,105 @@
+/*/////////////////////////////////////////////////////////////////////////////*/
+@import '_vars.css';
+
+/*/////////////////////////////////////////////////////////////////////////////*/
+.menu-container {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.menu-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  justify-content: center;
+}
+.menu-item {
+  flex: 0 0 50%;
+  height: 250px;
+}
+.menu-item {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+.product-thumbnail {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  flex: 0 0 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  &-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+.product-content {
+  flex: 0 0 50%;
+  background-color: #9fb0a5;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.reverse {
+  .product-content {
+      order: 0;
+  }
+  .product-thumbnail {
+      order: 1;
+  }
+}
+.product-title {
+  display: block;
+  width: 90%;
+  margin: 0 auto 10px;
+  font-size: 1.5rem;
+  font-family: var(--font-lobster);
+  color: var(--white);
+  line-height: 1.2;
+  text-align: center;
+  font-weight: normal;
+}
+.product-description {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  font-size: 1rem;
+  font-family: var(--font-open-sans);
+  color: var(--white);
+  line-height: 1.6;
+  text-align: center;
+  font-weight: normal;
+}
+.product-price {
+  margin-top: 10px;
+  font-family: var(--font-lobster);
+  font-size: 1.375rem;
+  line-height: 1;
+  color: var(--white);
+  font-style: normal;
+  text-align: center;
+}
+@media screen and (max-width: 768px) {
+  .menu-item {
+    flex: 0 0 50%;
+    height: 170px;
+    border: 1px solid white;
+  }
+  .product-content {
+    padding-top: 5px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .menu-item {
+    flex: 0 0 100%;
+    height: 170px;
+  }
+}
