@@ -10,8 +10,8 @@ function Slider() {
                 <div className={styles.title}>It`s a Food Adventure</div>
                 <div className={styles.line} />
                 <div className={styles.description}>
-                    You`ll never put a better <br />
-                    Bit of food on your knife.
+                    You`ll Never Put A Better <br />
+                    Bit Of Food On Your Knife.
                 </div>
                 <div className={styles.btnWrapper}>
                     <span className={styles.btn}>
