@@ -12,7 +12,7 @@ function Banner() {
                 <div className={styles.content}>
                     <div className={styles.title}>Story of Us</div>
                     <div className={styles.line}/>
-                    <div className={styles.descriprion}>
+                    <div className={styles.description}>
                         Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies 
                         ligula sed magna dictum porta. Donec sollicitudin molestie malesuada.
                     </div>

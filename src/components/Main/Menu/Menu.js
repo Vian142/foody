@@ -2,6 +2,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import _ from 'lodash';
+import PreviewMenu from './PreviewMenu/PreviewMenu';
 import image1 from './images/image-1.jpg';
 import image2 from './images/image-2.jpg';
 import image3 from './images/image-3.jpg';
@@ -14,34 +15,52 @@ const menus = [
     {
         name: 'Pizza Margarita',
         price: '19,99$',
-        thumbnail: image1
+        thumbnail: image1,
+        weight: '470',
+        description: 'Попробуйте и вы одну из любимых пицц петербуржцев, которая вошла в историю этого прекрасного города с разводными мостами, множеством музеев и достопримечательностей.',
+        composition: 'Тесто, сливочный соус, сыр моцарелла, курочка жареная'
     },
     {
         name: 'Pizza Margarita',
         price: '19,99$',
-        thumbnail: image2
+        thumbnail: image2,
+        weight: '470',
+        description: 'Попробуйте и вы одну из любимых пицц петербуржцев, которая вошла в историю этого прекрасного города с разводными мостами, множеством музеев и достопримечательностей.',
+        composition: 'Тесто, сливочный соус, курочка жареная, томаты, зелень'
     },
     {
         name: 'Pizza Margarita',
         price: '19,99$',
         thumbnail: image3,
+        weight: '470',
+        description: 'Попробуйте и вы одну из любимых пицц петербуржцев, которая вошла в историю этого прекрасного города с разводными мостами, множеством музеев и достопримечательностей.',
+        composition: 'Тесто, сливочный соус, сыр моцарелла, шампиньоны, курочка жареная, томаты, зелень',
         reverse: true
     },
     {
         name: 'Pizza Margarita',
         price: '19,99$',
         thumbnail: image4,
+        weight: '470',
+        description: 'Попробуйте и вы одну из любимых пицц петербуржцев, которая вошла в историю этого прекрасного города с разводными мостами, множеством музеев и достопримечательностей.',
+        composition: 'Тесто, томаты, зелень',
         reverse: true
     },
     {
         name: 'Pizza Margarita',
         price: '19,99$',
-        thumbnail: image5
+        thumbnail: image5,
+        weight: '470',
+        description: 'Попробуйте и вы одну из любимых пицц петербуржцев, которая вошла в историю этого прекрасного города с разводными мостами, множеством музеев и достопримечательностей.',
+        composition: 'Тесто, сливочный соус, шампиньоны, томаты, зелень'
     },
     {
         name: 'Pizza Margarita',
         price: '19,99$',
-        thumbnail: image6
+        thumbnail: image6,
+        weight: '470',
+        description: 'Попробуйте и вы одну из любимых пицц петербуржцев, которая вошла в историю этого прекрасного города с разводными мостами, множеством музеев и достопримечательностей.',
+        composition: 'Тесто, сливочный соус, сыр моцарелла, зелень'
     }
 ]
 
@@ -70,6 +89,9 @@ function Menu() {
             {
                 _.map(menus, (item, index) => <MenuItem key={index} {...item}/>)
             }
+        </div>
+        <div className={styles.wrapperPreview}>
+            <PreviewMenu {...menus[0]}/>
         </div>
     </div>
 }
