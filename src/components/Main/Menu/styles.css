@@ -68,6 +68,9 @@
   line-height: 1.2;
   text-align: center;
   font-weight: normal;
+  &:hover {
+      cursor: pointer;
+  }
 }
 .product-description {
   display: block;

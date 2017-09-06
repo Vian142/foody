@@ -7,7 +7,7 @@ import styles from './styles.css';
 const PreviewMenu = createReactClass({
     render() {
         const { name, thumbnail, description, weight, price, hide } = this.props;
-        return <div className={styles.wrapperModal}>
+        return <div className={classnames(styles.wrapperModal, styles.animFadeIn)}>
             <div className={styles.containerModal}>
                 <span
                     onClick={hide}    

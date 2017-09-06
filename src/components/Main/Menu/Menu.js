@@ -4,6 +4,7 @@ import createReactClass from 'create-react-class';
 import classnames from 'classnames';
 import _ from 'lodash';
 import PreviewMenu from './PreviewMenu/PreviewMenu';
+import CutText from '../../common/CutText/CutText';
 import image1 from './images/image-1.jpg';
 import image2 from './images/image-2.jpg';
 import image3 from './images/image-3.jpg';
@@ -83,7 +84,7 @@ const MenuItem = createReactClass({
         })
     },
     render() {
-        const { name, thumbnail, price, reverse } = this.props;
+        const { name, description, thumbnail, price, reverse } = this.props;
         const { show } = this.state;
         return <div className={styles.menuItemWrapper}>
             <div className={classnames(styles.menuItem, { [styles.reverse]: reverse })}>
@@ -93,9 +94,17 @@ const MenuItem = createReactClass({
                     style={{ backgroundImage: `url(${thumbnail})` }}>
                 </div>
                 <div className={styles.productContent}>
-                    <div className={styles.productTitle}>{name}</div>
+                    <div
+                        onClick={this.showPreview}
+                        className={styles.productTitle}>
+                        {
+                            CutText(name, 30)
+                        }
+                    </div>
                     <div className={styles.productDescription}>
-                        Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula.
+                        {
+                            CutText(description, 100)
+                        }
                 </div>
                     <div className={styles.productPrice}>
                         {price}
