@@ -6,10 +6,12 @@ import styles from './styles.css';
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 const PreviewMenu = createReactClass({
     render() {
-        const { name, thumbnail, description, weight, price } = this.props;
+        const { name, thumbnail, description, weight, price, hide } = this.props;
         return <div className={styles.wrapperModal}>
             <div className={styles.containerModal}>
-                <span className={styles.btnClose}>
+                <span
+                    onClick={hide}    
+                    className={styles.btnClose}>
                     <i className={classnames('fa fa-times')} />
                 </span>
                 <div className={styles.thumbnailContainer}>

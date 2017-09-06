@@ -1,5 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 import React from 'react';
+import createReactClass from 'create-react-class';
 import classnames from 'classnames';
 import _ from 'lodash';
 import PreviewMenu from './PreviewMenu/PreviewMenu';
@@ -14,15 +15,15 @@ import styles from './styles.css';
 const menus = [
     {
         name: 'Pizza Margarita',
-        price: '19,99$',
+        price: '9,99$',
         thumbnail: image1,
         weight: '470',
         description: 'Попробуйте и вы одну из любимых пицц петербуржцев, которая вошла в историю этого прекрасного города с разводными мостами, множеством музеев и достопримечательностей.',
         composition: 'Тесто, сливочный соус, сыр моцарелла, курочка жареная'
     },
     {
-        name: 'Pizza Margarita',
-        price: '19,99$',
+        name: 'Margarita Pizza',
+        price: '5,99$',
         thumbnail: image2,
         weight: '470',
         description: 'Попробуйте и вы одну из любимых пицц петербуржцев, которая вошла в историю этого прекрасного города с разводными мостами, множеством музеев и достопримечательностей.',
@@ -30,7 +31,7 @@ const menus = [
     },
     {
         name: 'Pizza Margarita',
-        price: '19,99$',
+        price: '8,99$',
         thumbnail: image3,
         weight: '470',
         description: 'Попробуйте и вы одну из любимых пицц петербуржцев, которая вошла в историю этого прекрасного города с разводными мостами, множеством музеев и достопримечательностей.',
@@ -39,7 +40,7 @@ const menus = [
     },
     {
         name: 'Pizza Margarita',
-        price: '19,99$',
+        price: '7,99$',
         thumbnail: image4,
         weight: '470',
         description: 'Попробуйте и вы одну из любимых пицц петербуржцев, которая вошла в историю этого прекрасного города с разводными мостами, множеством музеев и достопримечательностей.',
@@ -48,7 +49,7 @@ const menus = [
     },
     {
         name: 'Pizza Margarita',
-        price: '19,99$',
+        price: '4,99$',
         thumbnail: image5,
         weight: '470',
         description: 'Попробуйте и вы одну из любимых пицц петербуржцев, которая вошла в историю этого прекрасного города с разводными мостами, множеством музеев и достопримечательностей.',
@@ -65,33 +66,56 @@ const menus = [
 ]
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-function MenuItem({thumbnail, reverse}) {
-    return <div className={classnames(styles.menuItem, {[styles.reverse]: reverse})}>
-        <div className={styles.productThumbnail}
-            style={{backgroundImage:`url(${thumbnail})`}}>
-        </div>
-        <div className={styles.productContent}>
-            <div className={styles.productTitle}>Pizza Margarita</div>
-            <div className={styles.productDescription}>
-                Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula.
+const MenuItem = createReactClass({
+    getInitialState() {
+        return {
+            show: false
+        }
+    },
+    showPreview() {
+        this.setState({
+            show: true
+        })
+    },
+    hidePreview() {
+        this.setState({
+            show: false
+        })
+    },
+    render() {
+        const { name, thumbnail, price, reverse } = this.props;
+        const { show } = this.state;
+        return <div className={styles.menuItemWrapper}>
+            <div className={classnames(styles.menuItem, { [styles.reverse]: reverse })}>
+                <div
+                    onClick={this.showPreview}    
+                    className={styles.productThumbnail}
+                    style={{ backgroundImage: `url(${thumbnail})` }}>
+                </div>
+                <div className={styles.productContent}>
+                    <div className={styles.productTitle}>{name}</div>
+                    <div className={styles.productDescription}>
+                        Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula.
+                </div>
+                    <div className={styles.productPrice}>
+                        {price}
+                    </div>
+                </div>
             </div>
-            <div className={styles.productPrice}>
-                19,99$
-            </div>
+            {show && <div className={styles.wrapperPreview}>
+                <PreviewMenu {...this.props} hide={this.hidePreview} />
+            </div>}
         </div>
-    </div>
-}
+    }
+});
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 function Menu() {
     return <div className={styles.menuContainer}>
         <div className={styles.menuWrapper}>
             {
-                _.map(menus, (item, index) => <MenuItem key={index} {...item}/>)
+                _.map(menus, (item, index) => <MenuItem key={index} {...item} />)
             }
-        </div>
-        <div className={styles.wrapperPreview}>
-            <PreviewMenu {...menus[0]}/>
         </div>
     </div>
 }
